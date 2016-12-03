@@ -89,7 +89,7 @@ namespace raspicam {
             ~Private_Impl();
             /**Opens the camera and start capturing
             */
-            bool open ( bool StartCapture=true, int cameraNumber=0 );
+            bool open ( bool StartCapture=true );
             /**indicates if camera is open
             */
             bool isOpened() const
@@ -154,8 +154,6 @@ namespace raspicam {
               */
             void setShutterSpeed ( unsigned int shutter ); //currently not  supported
             void setFrameRate ( int fps );
-
-            void setCameraNum (int cameraNum);
 
             RASPICAM_FORMAT  getFormat() const {return State.captureFtm;}
             //Accessors
@@ -232,11 +230,6 @@ namespace raspicam {
             bool isVerticallyFlipped() const
             {
                 return State.vflip;
-            }
-
-            int getCameraNum() const
-            {
-                return State.cameraNum;
             }
 
 
